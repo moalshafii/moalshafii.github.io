@@ -1,0 +1,15 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+	scrollbar-width: none;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	scroll-snap-type: y mandatory;
+}
+
+body {
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+}
