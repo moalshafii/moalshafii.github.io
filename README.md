@@ -1,4 +1,4 @@
-# [`Mo Alshafii`](https://moalshafii.github.io).
+# [`Mo Alshafii`](https://moalshafii.github.io)
 
 ## Developing
 
