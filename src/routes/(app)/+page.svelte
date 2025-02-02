@@ -20,7 +20,6 @@
 
 <div class="page">
 	<h1 class="hidden">Mo Alshafii</h1>
-
 	<strong class="text-lg">
 		<span>I'm a </span>
 		<h2 style="display: inline;">Software Engineer</h2>
@@ -32,7 +31,10 @@
 		and reliability. Let’s bring your ideas to life <br />
 	</p>
 	<section id="contact">
-		<span class="text-lg">contact me today!</span>
+		<span class="text-lg">
+			<a href="/contact">contact</a>
+			me today!
+		</span>
 		<ul class="menu menu-horizontal menu-sm">
 			{#each ContactLinks as { title, href, icon }}
 				<li>

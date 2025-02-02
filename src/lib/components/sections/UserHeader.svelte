@@ -1,5 +1,6 @@
 <script>
-	import src from '$lib/assets/images/moalshafii-400x400.webp';
+	import src from '$lib/assets/images/moalshafii-200x200.webp';
+	let checked = $state(false);
 </script>
 
 <section>
@@ -10,19 +11,22 @@
 		</span>
 	</p>
 	<main>
-		<input type="checkbox" hidden name="avatarcheckbox" id="avatarcheckbox" />
+		<!-- {#key checked} -->
+		<input type="checkbox" {checked} hidden name="avatarcheckbox" id="avatarcheckbox" />
+		<!-- {/key} -->
 		<div id="user">
 			<label id="avatar" for="avatarcheckbox">
 				<img {src} alt="Mo Alshafii" />
 			</label>
 			<p id="info">
-				<span>
+				<span id="namecon">
 					<span id="name">Mo Alshafii</span>
-					<span class="icon icon-[mage--verified-check-fill]"></span>
+					<span id="verify" class="icon icon-[mage--verified-check-fill]"></span>
 				</span>
 				<span id="username">@moalshafii</span>
 			</p>
 		</div>
+		<menu></menu>
 	</main>
 </section>
 
@@ -33,7 +37,7 @@
 
 	section {
 		@apply relative flex h-40 w-full max-w-2xl flex-col justify-end p-[2px];
-		@apply rounded-2xl bg-primary/50;
+		@apply mb-14 rounded-2xl bg-primary;
 	}
 
 	#banner {
@@ -46,19 +50,36 @@
 		@apply absolute flex w-full translate-y-14 items-end justify-between px-4;
 	}
 
+	menu {
+		@apply hidden items-center justify-end pb-2 md:flex;
+	}
+
 	p {
 		@apply flex flex-col items-start justify-end;
+	}
+
+	#verify {
+		@apply text-primary md:size-5;
+	}
+
+	#namecon {
+		@apply flex w-44 flex-none items-center gap-2 md:w-52;
+	}
+
+	#avatarcheckbox:checked + #user #info {
+		@apply motion-preset-slide-left-lg motion-blur-in-[10px] motion-opacity-in-[33%] motion-duration-[0.15s]/blur motion-duration-[0.38s]/opacity motion-duration-[1.20s]/rotate motion-delay-[0.10s]/scale motion-delay-[0.60s]/blur motion-ease-spring-bouncier;
 	}
 
 	#name {
 		@apply text-lg md:text-xl;
 	}
+
 	#username {
 		@apply text-xs md:text-sm;
 	}
 
 	#user {
-		@apply relative flex w-full items-end;
+		@apply flex w-full items-end;
 		@apply gap-2 md:gap-3;
 	}
 
@@ -67,16 +88,17 @@
 	}
 
 	img {
-		@apply rounded-full bg-primary/50 p-[2px];
+		@apply cursor-pointer rounded-full bg-primary p-[2px];
 		@apply size-24 md:size-28 lg:size-32;
 	}
 
 	#avatarcheckbox:checked + #user #avatar img {
-		@apply size-48 rotate-[360deg];
+		@apply size-48;
+		@apply motion-scale-in-[0.5] motion-translate-x-in-[-120%] motion-translate-y-in-[-60%] motion-rotate-in-[-1080deg] motion-blur-in-[10px] motion-opacity-in-[33%] motion-duration-[0.15s]/blur motion-duration-[0.38s]/opacity motion-duration-[1.20s]/rotate motion-delay-[0.10s]/scale motion-delay-[0.60s]/blur motion-ease-spring-bouncier;
 	}
 
 	#avatarcheckbox:not(:checked) + #user #avatar img {
-		@apply skeleton rounded-full bg-primary/50;
+		@apply skeleton rotate-[-360deg] rounded-full bg-primary;
 	}
 
 	#avatarcheckbox:checked + #user #avatar {

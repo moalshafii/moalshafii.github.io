@@ -1,8 +1,6 @@
 <script>
-	import { UserHeader } from '$lib/components/sections';
 	import '$lib/css/app.css';
-	import { backOut } from 'svelte/easing';
-	import { fly } from 'svelte/transition';
+	import { UserHeader } from '$lib/components/sections';
 	let { children, data } = $props();
 </script>
 
@@ -12,7 +10,7 @@
 			<UserHeader />
 		</header>
 		{#key data.pathname}
-			<main in:fly={{ duration: 400, easing: backOut, x: 0, y: 500 }}>
+			<main>
 				{@render children()}
 			</main>
 		{/key}
@@ -30,6 +28,7 @@
 
 	main {
 		@apply flex h-full w-full flex-1 flex-col items-center gap-4 p-4 text-center;
+		@apply motion-preset-slide-up-lg motion-preset-pop motion-duration-300 motion-ease-spring-snappy;
 	}
 
 	header {
