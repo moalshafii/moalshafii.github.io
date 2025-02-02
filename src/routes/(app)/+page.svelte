@@ -19,7 +19,7 @@
 </svelte:head>
 
 <div class="page">
-	<h1 class="motion-preset-typewriter-[12] text-xl">Mo Alshafii</h1>
+	<h1 class="hidden">Mo Alshafii</h1>
 
 	<strong class="text-lg">
 		<span>I'm a </span>
