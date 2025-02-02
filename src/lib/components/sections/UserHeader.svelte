@@ -38,7 +38,7 @@
 
 	#banner {
 		@apply flex h-full w-full flex-col items-center justify-center p-4;
-		@apply rounded-2xl bg-base-100;
+		@apply select-none rounded-2xl bg-base-100;
 		@apply text-center text-xs md:text-sm lg:text-base;
 	}
 
